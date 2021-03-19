@@ -8,6 +8,10 @@ const AddNewUser = () => {
 
   const addNewUser = () => {
     const newUser = { id: uuid(), name: name }
+    if (!name) {
+      alert("ko duoc de trong")
+      return
+    }
 
     dispatch({
       type: "AddNewUser",
