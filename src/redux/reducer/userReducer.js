@@ -7,7 +7,8 @@ const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case "AddNewUser":
       // users.push(action.user)
-      return { ...state, users: [...users, action.user] }
+      const newState = [...state, action.user]
+      return newState
 
     case "DeleteUser":
       const indexOfUser = users.findIndex((user) => user.id === action.user.id)

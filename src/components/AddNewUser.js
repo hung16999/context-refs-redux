@@ -1,13 +1,13 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { uuid } from "uuidv4"
+import { v4 } from "uuid"
 
 const AddNewUser = () => {
   const [name, setName] = useState("")
   const dispatch = useDispatch()
 
   const addNewUser = () => {
-    const newUser = { id: uuid(), name: name }
+    const newUser = { id: v4(), name: name }
     if (!name) {
       alert("ko duoc de trong")
       return
